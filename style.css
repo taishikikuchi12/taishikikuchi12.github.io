@@ -134,3 +134,18 @@ a:hover {
   color: #0044cc;
   text-decoration: underline;
 }
+
+.mail-button {
+  display: inline-block;
+  padding: 12px 20px;
+  margin-top: 12px;
+  background-color: #007aff;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.mail-button:hover {
+  opacity: 0.8;
+}
