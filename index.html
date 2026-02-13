@@ -38,6 +38,14 @@
 
     <aside id="mainimg">
 
+      <!-- スライド切り替えボタン -->
+      <button class="slide-nav slide-prev" type="button" aria-label="前のスライド">
+        <i class="fas fa-chevron-left" aria-hidden="true"></i>
+      </button>
+      <button class="slide-nav slide-next" type="button" aria-label="次のスライド">
+        <i class="fas fa-chevron-right" aria-hidden="true"></i>
+      </button>
+
       <div class="slide slide1">
         <div>
           <h1>菊地 泰史</h1>
@@ -172,17 +180,22 @@
             <span class="fade-in-text">Myblog</span>
           </h2>
 
-          <dl class="new">
-            <dt>2026/02/12 <span>ブログ</span></dt>
-            <dd>近日公開予定</dd>
+          <div class="new" id="blogList">
 
-          </dl>
+            <a class="blog-item" href="index.html">
+              <span class="blog-date">2026/02/13</span>
+              <span class="blog-title">ポートフォリオを公開しました</span>
+            </a>
+
+          </div>
+
+          <nav class="blog-pagination" id="blogPagination" aria-label="ブログのページ切り替え"></nav>
         </section>
 
         <section id="con">
 
 
-          <a href="mailto:taishikikuchi12@gmail.com" class="mail-button">お問い合わせはこちら</a>
+          <a href="mailto:taishikikuchi12@gmail.com" class="mail-button">web制作や感想のお問い合わせはこちら</a>
 
         </section>
 

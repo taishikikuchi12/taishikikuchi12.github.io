@@ -14,6 +14,7 @@
 @import url("slide.css");
 @import url("inview.css");
 
+
 /*CSSカスタムプロパティ（サイト全体を一括管理する為の設定）
 ---------------------------------------------------------------------------*/
 :root {
@@ -82,6 +83,7 @@ body {
 
 /*画面幅900px以上の追加指定*/
 @media screen and (min-width: 900px) {
+
   html,
   body {
     font-size: 16px;
@@ -162,7 +164,7 @@ input {
   font-size: 1rem;
 }
 
-section + section {
+section+section {
   margin-top: 3rem;
 }
 
@@ -236,6 +238,7 @@ header {
 
 /*画面幅900px以上の追加指定*/
 @media screen and (min-width: 900px) {
+
   /*ヘッダーブロック*/
   header {
     position: fixed;
@@ -269,7 +272,7 @@ header {
 }
 
 #menubar ul {
-	text-shadow: 2px 2px 2px rgb(0, 0, 0);
+  text-shadow: 2px 2px 2px rgb(0, 0, 0);
   list-style: none;
   margin: 0;
   padding: 0;
@@ -319,7 +322,7 @@ a.ddmenu::before {
 /*大きな端末用のメニューブロック設定
 ---------------------------------------------------------------------------*/
 /*メニューブロック全体の設定*/
-.large-screen #menubar > nav > ul {
+.large-screen #menubar>nav>ul {
   display: flex;
   /*横並びにする*/
   font-size: 0.85rem;
@@ -526,6 +529,7 @@ main h3 {
 
 /*画面幅900px以上の追加指定*/
 @media screen and (min-width: 900px) {
+
   /*カラムで使う為の指定*/
   main.column {
     display: flex;
@@ -601,7 +605,7 @@ main h3 {
 }
 
 /*メニュー１個あたり（子メニュー以外）*/
-.submenu > li {
+.submenu>li {
   border: 1px solid #ccc;
   /*枠線の幅、線種、色*/
   border-top: none;
@@ -615,7 +619,7 @@ main h3 {
 }
 
 /*h3見出しの下にサブメニューが続く場合にメニューの上の線をなくす*/
-.sub-contents h3 + nav .submenu {
+.sub-contents h3+nav .submenu {
   border-top: none;
 }
 
@@ -669,7 +673,7 @@ footer .pr {
 /*section全体のフェードイン（左→右）
 ---------------------------------------------------------------------------*/
 /*初期状態（非表示）*/
-main > section {
+main>section {
   opacity: 0;
   transform: translateX(-24px);
   transition:
@@ -679,14 +683,14 @@ main > section {
 }
 
 /*表示状態（JSで付与）*/
-main > section.section-in {
+main>section.section-in {
   opacity: 1;
   transform: translateX(0);
 }
 
 /*動きを減らす設定にしている人向け*/
 @media (prefers-reduced-motion: reduce) {
-  main > section {
+  main>section {
     opacity: 1;
     transform: none;
     transition: none;
@@ -712,7 +716,7 @@ animationの行の「0.05s」が文字の出現のなめらかさで、大きい
 /*お知らせブロック
 ---------------------------------------------------------------------------*/
 /*記事の下に空ける余白*/
-.new dd {
+dl.new dd {
   padding-bottom: 1rem;
 }
 
@@ -753,13 +757,95 @@ animationの行の「0.05s」が文字の出現のなめらかさで、大きい
 
 /*画面幅700px以上の追加指定*/
 @media screen and (min-width: 700px) {
+
   /*ブロック全体*/
-  .new {
+  dl.new {
     display: grid;
     /*gridを使う指定*/
     grid-template-columns: auto 1fr;
     /*横並びの指定。日付とアイコン部分の幅は自動で、内容が入るブロックは残り幅一杯とる。*/
   }
+}
+
+
+/* ブログ一覧（date + title を1つのボタンに） */
+#blogList.new {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ページネーション位置固定：記事が読み込めた時だけ高さを確保 */
+#blogList.new.has-items {
+  min-height: 360px;
+  /* 6件分の高さを確保（必要なら調整） */
+}
+
+#blogList .blog-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+#blogList .blog-item:hover {
+  background: rgba(255, 255, 255, 0.22);
+  color: var(--text-color);
+}
+
+#blogList .blog-date {
+  white-space: nowrap;
+  font-weight: 700;
+  opacity: 0.9;
+}
+
+#blogList .blog-title {
+  flex: 1;
+}
+
+/*===============================================================
+  Blog ページネーション（6件ずつ表示）
+===============================================================*/
+.blog-pagination {
+  margin-top: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.blog-pagination .page-btn {
+  border: none;
+  background: transparent;
+  padding: 6px 10px;
+  cursor: pointer;
+  border-radius: 6px;
+  color: #8ab4ff;
+  font-weight: 700;
+}
+
+.blog-pagination .page-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.blog-pagination .page-btn.is-active {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.blog-pagination .page-btn.is-disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.blog-pagination .page-sep {
+  padding: 0 4px;
+  opacity: 0.7;
 }
 
 /*追加指定ここまで*/
@@ -794,6 +880,7 @@ animationの行の「0.05s」が文字の出現のなめらかさで、大きい
 
 /*画面幅500px以上の追加指定*/
 @media screen and (min-width: 500px) {
+
   /*listブロック全体を囲むブロック*/
   .list-grid1 {
     grid-template-columns: repeat(2, 1fr);
@@ -807,6 +894,7 @@ animationの行の「0.05s」が文字の出現のなめらかさで、大きい
 
 /*画面幅800px以上の追加指定*/
 @media screen and (min-width: 800px) {
+
   /*listブロック全体を囲むブロック*/
   .list-grid1 {
     grid-template-columns: repeat(3, 1fr);
@@ -1018,6 +1106,7 @@ animationの行の「0.05s」が文字の出現のなめらかさで、大きい
 
 /*画面幅900px以上の追加指定*/
 @media screen and (min-width: 900px) {
+
   /*th（左側）のみの設定*/
   .ta1 th {
     width: 20%;
@@ -1156,11 +1245,26 @@ animationの行の「0.05s」が文字の出現のなめらかさで、大きい
   display: inline-block;
   padding: 12px 20px;
   margin-top: 12px;
-  background-color: #d15d08;
-  color: white;
+  background: var(--primary-color);
+  color: var(--primary-inverse-color);
   text-decoration: none;
   border-radius: 8px;
   font-weight: bold;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: filter 0.2s, transform 0.2s;
+}
+
+.mail-button:hover,
+.mail-button:focus-visible {
+  color: var(--primary-inverse-color);
+  /* a:hover のオレンジ文字で消えないよう固定 */
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+
+.mail-button:active {
+  transform: translateY(0);
+  filter: brightness(0.98);
 }
 
 #skills .list h3,
@@ -1171,17 +1275,20 @@ animationの行の「0.05s」が文字の出現のなめらかさで、大きい
 /* list画像サイズ固定（切り抜きなし・余白白） */
 .list-grid1 .list figure {
   width: 100%;
-  height: 180px; /* ← 好きな高さに変更可能 */
+  height: 180px;
+  /* ← 好きな高さに変更可能 */
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #ffffff; /* 足りない部分は白 */
+  background: #ffffff;
+  /* 足りない部分は白 */
 }
 
 .list-grid1 .list figure img {
   max-width: 100%;
   max-height: 100%;
-  object-fit: contain; /* ← 切り取らない */
+  object-fit: contain;
+  /* ← 切り取らない */
 }
 
 
@@ -1195,10 +1302,58 @@ animationの行の「0.05s」が文字の出現のなめらかさで、大きい
   border-top: 1.5px solid #000;
 }
 
-#mainimg h1{
-	text-shadow: 5px 5px 5px rgb(0, 0, 0);
+#mainimg h1 {
+  text-shadow: 5px 5px 5px rgb(0, 0, 0);
 }
 
-.ward{
-	text-shadow: 1px 1px 1px rgb(0, 0, 0);
+.ward {
+  text-shadow: 1px 1px 1px rgb(0, 0, 0);
+}
+
+/*===============================================================
+  スライドショー：矢印ボタン
+===============================================================*/
+#mainimg {
+  position: relative;
+}
+
+.slide-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 5;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.slide-prev {
+  left: 12px;
+}
+
+.slide-next {
+  right: 12px;
+}
+
+.slide-nav:hover {
+  filter: brightness(1.05);
+}
+
+.slide-nav:active {
+  transform: translateY(-50%) scale(0.98);
+}
+
+@media screen and (max-width: 600px) {
+  .slide-nav {
+    width: 40px;
+    height: 40px;
+  }
 }
