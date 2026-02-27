@@ -36,17 +36,17 @@
 
 /*１枚目画像*/
 .slide1 {
-	background: url('../images/1.png') no-repeat center center / cover;	/*１枚目の背景画像の読み込み*/
+	background: url('https://taishikikuchi12.github.io/taishikikuchi12-images/images/banana.png') no-repeat center center / cover;	/*１枚目の背景画像の読み込み*/
 }
 
 /*２枚目画像*/
 .slide2 {
-	background: url('../images/22.JPG') no-repeat center center / cover;	/*２枚目の背景画像の読み込み*/
+	background: url('https://taishikikuchi12.github.io/taishikikuchi12-images/images/myroom.JPG') no-repeat center center / cover;	/*２枚目の背景画像の読み込み*/
 }
 
 /*３枚目画像*/
 .slide3 {
-	background: url('../images/3.jpeg') no-repeat center center / cover;	/*３枚目の背景画像の読み込み*/
+	background: url('https://taishikikuchi12.github.io/taishikikuchi12-images/images/huzi.jpeg') no-repeat center center / cover;	/*３枚目の背景画像の読み込み*/
 }
 
 /*大きなテキスト*/

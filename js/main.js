@@ -1,7 +1,66 @@
 //===============================================================
+// HTML include：data-include="..." を fetch で読み込む
+//===============================================================
+async function includeHTML() {
+    const targets = document.querySelectorAll('[data-include]');
+    for (const el of targets) {
+        const path = el.getAttribute('data-include');
+        try {
+            const res = await fetch(path, { cache: 'no-cache' });
+            if (!res.ok) {
+                el.innerHTML = `<p style="color:red">include failed: ${path} (${res.status})</p>`;
+                continue;
+            }
+            el.innerHTML = await res.text();
+        } catch (e) {
+            el.innerHTML = `<p style="color:red">include error: ${path}</p>`;
+        }
+    }
+
+    // blog-section.html 内のリンクを、表示しているページの階層に合わせて補正
+    // - index.html（ルート）: ./2026_.. → blogs/2026_.., ../index.html → index.html
+    // - blogs/配下: そのまま（./ や ../ が正しい）
+    try {
+        const isInBlogs = window.location.pathname.includes('/blogs/');
+        if (!isInBlogs) {
+            document.querySelectorAll('#blogList a.blog-item').forEach((a) => {
+                const href = a.getAttribute('href') || '';
+                if (href.startsWith('./')) {
+                    a.setAttribute('href', 'blogs/' + href.slice(2));
+                } else if (href.startsWith('../')) {
+                    a.setAttribute('href', href.replace(/^\.\.\//, ''));
+                }
+            });
+        }
+    } catch (e) {
+        // noop
+    }
+
+    // include後に、差し込まれた要素向けの初期化を再実行
+    if (typeof initBlogPagination === 'function') {
+        initBlogPagination();
+    }
+    if (typeof initFadeInTextInview === 'function') {
+        initFadeInTextInview();
+    }
+    if (typeof initSectionInview === 'function') {
+        initSectionInview();
+    }
+}
+
+// DOM構築後に include 実行（main.js が後から読み込まれても確実に動くようにする）
+(function () {
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => includeHTML());
+    } else {
+        includeHTML();
+    }
+})();
+
+//===============================================================
 // blog：6件ずつ表示 + ページ番号（各記事 = 1ボタン）
 //===============================================================
-$(function () {
+function initBlogPagination() {
     var $list = $('#blogList');
     var $pager = $('#blogPagination');
 
@@ -95,6 +154,11 @@ $(function () {
 
     // 初期表示
     renderPage(0);
+}
+
+// 初期化（通常のページ）
+$(function () {
+    initBlogPagination();
 });
 
 //===============================================================
@@ -124,12 +188,12 @@ var $menubarHdr = $('#menubar_hdr');
 
 // menu
 $(window).on("load resize", debounce(function () {
-    if (window.innerWidth < 900) {	// ここがブレイクポイント指定箇所です
+    if (window.innerWidth < 900) { // ここがブレイクポイント指定箇所です
         // 小さな端末用の処理
         $('body').addClass('small-screen').removeClass('large-screen');
         $menubar.addClass('display-none').removeClass('display-block');
         $menubarHdr.removeClass('display-none ham').addClass('display-block');
-    } else {
+        } else {
         // 大きな端末用の処理
         $('body').addClass('large-screen').removeClass('small-screen');
         $menubar.addClass('display-block').removeClass('display-none');
@@ -302,13 +366,15 @@ $(function () {
 
 
 //===============================================================
-// テキストのフェードイン効果
+// テキストのフェードイン効果（inview）
 //===============================================================
-$(function () {
-    $('.fade-in-text').on('inview', function (event, isInView) {
+function initFadeInTextInview() {
+    if (typeof $ === 'undefined') return;
+
+    // includeで後から追加された要素にも効くように、いったん解除して付け直す
+    $('.fade-in-text').off('inview').on('inview', function (event, isInView) {
         // この要素が既にアニメーションされたかどうかを確認
         if (isInView && !$(this).data('animated')) {
-            // アニメーションがまだ実行されていない場合
             let innerHTML = '';
             const text = $(this).text();
             $(this).text('');
@@ -318,22 +384,31 @@ $(function () {
             }
 
             $(this).html(innerHTML).css('visibility', 'visible');
-            // アニメーションが実行されたことをマーク
             $(this).data('animated', true);
         }
     });
+}
+
+$(function () {
+    initFadeInTextInview();
 });
 
 //===============================================================
 // section全体を左→右にフェードイン表示（inview使用）
 //===============================================================
-$(function () {
-    $('main > section').on('inview', function (event, isInView) {
+function initSectionInview() {
+    if (typeof $ === 'undefined') return;
+
+    $('main > section').off('inview').on('inview', function (event, isInView) {
         if (isInView && !$(this).data('sectionAnimated')) {
             $(this).addClass('section-in');
             $(this).data('sectionAnimated', true);
         }
     });
+}
+
+$(function () {
+    initSectionInview();
 });
 
 
@@ -381,4 +456,3 @@ $(function () {
         currentIndex = nextIndex;
     }, 4000); // 4秒ごとにスライドを切り替える
 });
-
