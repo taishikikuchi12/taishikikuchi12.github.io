@@ -4,122 +4,105 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="菊地泰史のポートフォリオです" />
-    <meta
-      name="keywords"
-      content="菊地,泰史,たいし,きくち,菊地泰史, Taishi, Kikuchi, 中学生 プログラミング, AI 開発, Python, 機械学習, ポートフォリオ, 自己紹介"
-    />
-    <title>菊地泰史のポートフォリオ</title>
+    <meta name="keywords" content="菊地,泰史,たいし,きくち,菊地泰史, Taishi, Kikuchi, 中学生 プログラミング, AI 開発, Python, 機械学習, ポートフォリオ, 自己紹介" />
+    <title>今後のブログについて | 菊地泰史のポートフォリオ</title>
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="icon" href="../favicon.ico" sizes="any" type="image/x-icon" />
+    <style>
+      main > section {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+    </style>
   </head>
 
   <body class="home">
     <div id="container">
       <header>
         <h1 id="logo"><a href="../index.html">菊地泰史のポートフォリオ</a></h1>
-
-        <!--開閉ブロック-->
         <div id="menubar">
           <nav>
             <ul>
               <li><a href="../index.html">HOME</a></li>
-              <li><a href="#about">Main</a></li>
-              <li><a href="#blog">blog</a></li>
+              <li><a href="#article">記事</a></li>
+              <li><a href="#blog">Blog</a></li>
               <li><a href="#con">contact</a></li>
             </ul>
           </nav>
         </div>
       </header>
 
-      <!--スライド-->
       <aside id="mainimg">
-        <div class="slide slide1">
-          <div>
-            <h1>菊地 泰史</h1>
-          </div>
-        </div>
-
-        <div class="slide slide2">
-          <div>
-            <h1>菊地 泰史</h1>
-          </div>
-        </div>
-
-        <div class="slide slide3">
-          <div>
-            <h1>菊地 泰史</h1>
-          </div>
-        </div>
+        <div class="slide slide1"><div><h1>菊地 泰史</h1></div></div>
+        <div class="slide slide2"><div><h1>菊地 泰史</h1></div></div>
+        <div class="slide slide3"><div><h1>菊地 泰史</h1></div></div>
       </aside>
 
       <div id="contents">
         <main>
-          <!-- 自己紹介 -->
-          <section class="bg1" id="about">
-            <h2 class="c">
-              <span class="fade-in-text">自己紹介</span>
-            </h2>
+          <section class="bg1" id="article">
+            <h2 class="c"><span>今後のブログについて</span></h2>
+            <p style="font-size:0.85rem; opacity:0.8; margin-bottom:1.5rem;">2026/02/27</p>
             <p class="ward">
-              こんにちは、菊地泰史です。現在中学生で、将来の夢はIT企業を作ることです。Pythonを中心にプログラミングを学習し、仮想環境の構築や機械学習の基本的なアルゴリズムの実装に取り組んでいます。<br /><br />
-              最近はAI開発に一層力を入れており、モデル構築の基礎を学びながら、実際に動くアプリケーションの開発にも挑戦しています。<br /><br />
-              新しい技術を学び続け、新しい価値を生み出せるエンジニアを目指しています。
+              こんにちは、菊地泰史です。<br /><br />
+              今回は今後のブログ運営について書こうと思います。<br /><br />
+              これまでポートフォリオサイトの制作に集中してきましたが、今後はブログも定期的に更新していく予定です。<br /><br />
+              主に以下の内容を書いていこうと考えています。<br />
+              ・Pythonや機械学習の学習記録<br />
+              ・作成したアプリの開発秘話<br />
+              ・プログラミングで詰まったことと解決方法<br />
+              ・自称中学生エンジニアとして感じたこと<br /><br />
+              まだまだ勉強中ですが、同じように学んでいる人の役に立てるような記事を目指していきます。<br />
+              よろしくお願いします！
             </p>
           </section>
 
-          <!-- blog inport-->
           <div data-include="../parts/blog-section.html"></div>
 
-          <!--コンタクト-->
           <section id="con">
-            <a href="mailto:taishikikuchi12@gmail.com" class="mail-button"
-              >web制作や感想のお問い合わせはこちら</a
-            >
+            <a href="mailto:taishikikuchi12@gmail.com" class="mail-button">web制作や感想のお問い合わせはこちら</a>
           </section>
 
-          <!--下のやつ-->
           <ul id="footermenu">
             <li><a href="../index.html">HOME</a></li>
-            <li><a href="#about">自己紹介</a></li>
-            <li><a href="#skills">スキル</a></li>
-            <li><a href="#works">作品</a></li>
+            <li><a href="../index.html#about">自己紹介</a></li>
+            <li><a href="../index.html#skills">スキル</a></li>
+            <li><a href="../index.html#works">作品</a></li>
             <li><a href="#blog">blog</a></li>
           </ul>
 
           <footer>
-            <small>
-              Copyright&copy;
-              <a href="../index.html">Taishi Kikuchi</a>
-              All Rights Reserved.
-            </small>
-            <span class="pr">
-              <a href="https://template-party.com/" target="_blank">
-                《Web Design:Template-Party》
-              </a>
-            </span>
+            <small>Copyright&copy; <a href="../index.html">Taishi Kikuchi</a> All Rights Reserved.</small>
+            <span class="pr"><a href="https://template-party.com/" target="_blank">《Web Design:Template-Party》</a></span>
           </footer>
 
-          <!-- ページの上部へ戻るボタン -->
-          <div class="pagetop">
-            <a href="#">
-              <i class="fas fa-angle-double-up"></i>
-            </a>
-          </div>
+          <div class="pagetop"><a href="#"></a></div>
         </main>
       </div>
     </div>
-    <!-- /#container -->
 
-    <!-- 開閉ボタン（ハンバーガーアイコン） -->
     <div id="menubar_hdr"><span></span><span></span><span></span></div>
 
-    <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-    <!-- inview -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/protonet-jquery.inview/1.1.2/jquery.inview.min.js"></script>
     <script src="../js/jquery.inview_set.js"></script>
-
-    <!-- テンプレ専用スクリプト -->
     <script src="../js/main.js"></script>
+
+    <script>
+      $(function () {
+        if ($("#mainimg .slide.active").length > 0) return;
+        var slides = $("#mainimg .slide");
+        if (slides.length === 0) return;
+        var currentIndex = 0;
+        slides.eq(currentIndex).css("opacity", 1).addClass("active");
+        setInterval(function () {
+          var nextIndex = (currentIndex + 1) % slides.length;
+          slides.eq(currentIndex).css("opacity", 0).removeClass("active");
+          slides.eq(nextIndex).css("opacity", 1).addClass("active");
+          currentIndex = nextIndex;
+        }, 4000);
+      });
+    </script>
   </body>
 </html>
