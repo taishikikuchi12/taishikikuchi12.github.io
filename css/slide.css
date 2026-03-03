@@ -52,7 +52,7 @@
 /*大きなテキストスマホ*/
 #mainimg h1 {
 	margin: 0;padding: 0;
-	font-size: 7vw;		/*文字サイズ。100vwは画面幅100%のことです。*/
+	font-size: 6vw;		/*文字サイズ。100vwは画面幅100%のことです。*/
 	line-height: 1.5;	/*行間を少し狭く*/
 	font-weight: 500;	/*文字の太さを少し太く*/
 }
