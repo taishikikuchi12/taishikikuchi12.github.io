@@ -114,7 +114,7 @@ header {
 #logo img { display: block; width: 160px; }
 #logo a {
   display: block;
-  text-shadow: 2px 1px 2px rgb(0,0,0);
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.95), 0 0 12px rgba(0,0,0,0.8);
   text-decoration: none;
   font-size: 1rem;
   font-weight: 800;
@@ -388,7 +388,7 @@ main > section.section-in { opacity: 1; transform: translateX(0); }
 }
 .mail-button:active { transform: translateY(0); filter: brightness(0.98); }
 
-#mainimg h1 { text-shadow: 5px 5px 5px rgb(0,0,0); }
+#mainimg h1 { text-shadow: 2px 2px 8px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.7); }
 .ward { text-shadow: 1px 1px 1px rgb(0,0,0); }
 
 /* スライドショー矢印ボタン */
