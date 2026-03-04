@@ -3,18 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>今後のブログについて | Learn. Code. Create a better word. |きくち たいし</title>
+    <title>
+      今後のブログについて | Learn. Code. Create a better word. |きくち たいし
+    </title>
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="icon" href="../favicon.ico" sizes="any" type="image/x-icon" />
-    <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
-    <script>
-      window.OneSignalDeferred = window.OneSignalDeferred || [];
-      OneSignalDeferred.push(async function(OneSignal) {
-        await OneSignal.init({
-          appId: "b1a01960-23d9-4723-bb52-a37480287c41",
-        });
-      });
-    </script>
     <style>
       main > section {
         opacity: 1 !important;
@@ -22,12 +15,28 @@
         transition: none !important;
       }
     </style>
+    <script
+      src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js"
+      defer
+    ></script>
+    <script>
+      window.OneSignalDeferred = window.OneSignalDeferred || [];
+      OneSignalDeferred.push(async function (OneSignal) {
+        await OneSignal.init({
+          appId: "b1a01960-23d9-4723-bb52-a37480287c41",
+        });
+      });
+    </script>
   </head>
 
   <body class="home">
     <div id="container">
       <header>
-        <h1 id="logo"><a href="../index.html">Learn. Code. Create a better word. |きくち たいし</a></h1>
+        <h1 id="logo">
+          <a href="../index.html"
+            >Learn. Code. Create a better word. |きくち たいし</a
+          >
+        </h1>
         <div id="menubar">
           <nav>
             <ul>
@@ -41,16 +50,30 @@
       </header>
 
       <aside id="mainimg">
-        <div class="slide slide1"><div><h1>学びをコードに<br>コードを価値に。</h1></div></div>
-        <div class="slide slide2"><div><h1>学びをコードに<br>コードを価値に</h1></div></div>
-        <div class="slide slide3"><div><h1>学びをコードに<br>コードを価値に</h1></div></div>
+        <div class="slide slide1">
+          <div>
+            <h1>学びをコードに<br />コードを価値に。</h1>
+          </div>
+        </div>
+        <div class="slide slide2">
+          <div>
+            <h1>学びをコードに<br />コードを価値に</h1>
+          </div>
+        </div>
+        <div class="slide slide3">
+          <div>
+            <h1>学びをコードに<br />コードを価値に</h1>
+          </div>
+        </div>
       </aside>
 
       <div id="contents">
         <main>
           <section class="bg1" id="article">
             <h2 class="c"><span>今後のブログについて</span></h2>
-            <p style="font-size:0.85rem; opacity:0.8; margin-bottom:1.5rem;">2026/02/27</p>
+            <p style="font-size: 0.85rem; opacity: 0.8; margin-bottom: 1.5rem">
+              2026/02/27
+            </p>
             <p class="ward">
               こんにちは、菊地泰史です。<br /><br />
               今回は今後のブログ運営について書こうと思います。<br /><br />
@@ -68,7 +91,9 @@
           <div data-include="../parts/blog-section.html"></div>
 
           <section id="con">
-            <a href="/cdn-cgi/l/email-protection#2256434b514a4b494b4957414a4b131062454f434b4e0c414d4f" class="mail-button">web制作や感想のお問い合わせはこちら</a>
+            <a href="mailto:taishikikuchi12@gmail.com" class="mail-button"
+              >web制作や感想のお問い合わせはこちら</a
+            >
           </section>
 
           <ul id="footermenu">
@@ -80,8 +105,15 @@
           </ul>
 
           <footer>
-            <small>Copyright&copy; <a href="../index.html">Taishi Kikuchi</a> All Rights Reserved.</small>
-            <span class="pr"><a href="https://template-party.com/" target="_blank">《Web Design:Template-Party》</a></span>
+            <small
+              >Copyright&copy; <a href="../index.html">Taishi Kikuchi</a> All
+              Rights Reserved.</small
+            >
+            <span class="pr"
+              ><a href="https://template-party.com/" target="_blank"
+                >《Web Design:Template-Party》</a
+              ></span
+            >
           </footer>
 
           <div class="pagetop"><a href="#"></a></div>
@@ -91,7 +123,7 @@
 
     <div id="menubar_hdr"><span></span><span></span><span></span></div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/protonet-jquery.inview/1.1.2/jquery.inview.min.js"></script>
     <script src="../js/jquery.inview_set.js"></script>
     <script src="../js/main.js"></script>
@@ -106,4 +138,10 @@
         setInterval(function () {
           var nextIndex = (currentIndex + 1) % slides.length;
           slides.eq(currentIndex).css("opacity", 0).removeClass("active");
-         
+          slides.eq(nextIndex).css("opacity", 1).addClass("active");
+          currentIndex = nextIndex;
+        }, 4000);
+      });
+    </script>
+  </body>
+</html>
