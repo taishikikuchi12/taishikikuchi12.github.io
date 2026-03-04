@@ -21,6 +21,8 @@
     <meta name="theme-color" content="#ffffff" />
     <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js"></script>
     <script>
+      const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+      if (isIOS) document.documentElement.classList.add('ios');
       window.OneSignalDeferred = window.OneSignalDeferred || [];
       OneSignalDeferred.push(async function (OneSignal) {
         await OneSignal.init({
@@ -28,6 +30,60 @@
         });
       });
     </script>
+    <style>
+      .ios-hint {
+        background: #fffbe7;
+        color: #333;
+        border: 1px solid #f0e1a0;
+        padding: 15px;
+        margin: 10px 0 0 0;
+        border-radius: 6px;
+        font-size: 15px;
+        max-width: 430px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .ios-hint__row {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        margin-bottom: 4px;
+      }
+      .ios-hint__btn {
+        background: #f5d97a;
+        color: #444;
+        border: none;
+        border-radius: 4px;
+        padding: 2px 7px;
+        font-size: 14px;
+        margin-left: 4px;
+        cursor: pointer;
+      }
+      .push-btn {
+        background: #f6c63a;
+        color: #222;
+        border: none;
+        border-radius: 5px;
+        padding: 8px 18px;
+        font-size: 16px;
+        font-weight: bold;
+        text-decoration: none;
+        display: inline-block;
+        margin-top: 10px;
+        transition: background 0.2s;
+      }
+      .push-btn:hover {
+        background: #ffe28a;
+      }
+
+      /* Show iOS-only sections */
+      .ios-only {
+        display: none;
+      }
+      html.ios .ios-only {
+        display: block;
+      }
+    </style>
   </head>
 
   <body class="home">
@@ -194,6 +250,29 @@
           </section>
 
           <div data-include="parts/blog-section.html"></div>
+
+          <!-- iOS only: How to receive notifications -->
+          <section id="ios-notice" class="bg1 ios-only">
+            <h3 class="c"><span class="fade-in-text">iPhoneでブログ更新の通知を受け取る方法</span></h3>
+            <div class="ward">
+              <p>
+                iPhone（iOS）は仕様上、Safariで普通に開いただけでは通知を受け取れません。
+                「ホーム画面に追加」したあと、追加したアイコンから開いてください。
+              </p>
+              <ol style="margin: 10px 0 0; padding-left: 22px; line-height: 1.8;">
+                <li>Safariでこのサイトを開く</li>
+                <li>右下の・・・を押す</li>
+                <li>「共有」ボタンを押す</li>
+                <li>下にスクロール</li>
+                <li>「ホーム画面に追加」を選ぶ</li>
+                <li>追加されたアイコンからこのサイトを開く</li>
+                <li>ページ下の「通知を受け取る」を押して許可する</li>
+              </ol>
+              <p style="margin-top: 12px;">
+                <a href="#con" class="push-btn">通知を受け取る</a>
+              </p>
+            </div>
+          </section>
 
           <section id="con">
             <a href="mailto:taishikikuchi12@gmail.com" class="mail-button"
