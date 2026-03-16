@@ -1,189 +1,178 @@
 <!doctype html>
 <html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>
-      今後のブログについて | Learn. Code. Create a better word. |きくち たいし
-    </title>
-    <link rel="stylesheet" href="../css/style.css" />
-    <link rel="icon" href="../favicon.ico" sizes="any" type="image/x-icon" />
-    <!-- Home screen / PWA icons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon.ico" />
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico" />
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico" />
-    <link rel="manifest" href="/site.webmanifest" />
 
-    <!-- iOS Home Screen / status bar -->
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <meta
-      name="apple-mobile-web-app-title"
-      content="Learn. Code. Create a better word. |きくち たいし"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>
+    今後のブログについて | Learn. Code. Create a better word. |きくち たいし
+  </title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="icon" href="../favicon.ico" sizes="any" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Learn. Code. Create a better word. |きくち たいし" />
+  <meta name="theme-color" content="#ffffff" />
+  <style>
+    main>section {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
 
-    <!-- Theme color (Android Chrome UI) -->
-    <meta name="theme-color" content="#ffffff" />
-    <style>
-      main > section {
-        opacity: 1 !important;
-        transform: none !important;
-        transition: none !important;
-      }
-    </style>
-    <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js"></script>
-    <script>
-      window.OneSignalDeferred = window.OneSignalDeferred || [];
-      OneSignalDeferred.push(async function (OneSignal) {
-        await OneSignal.init({
-          appId: "b1a01960-23d9-4723-bb52-a37480287c41",
-        });
+    .ios-only {
+      display: none;
+    }
+
+    html.ios .ios-only {
+      display: block;
+    }
+  </style>
+  <script>
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+    if (isIOS) document.documentElement.classList.add('ios');
+  </script>
+  <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js"></script>
+  <script>
+    window.OneSignalDeferred = window.OneSignalDeferred || [];
+    OneSignalDeferred.push(async function (OneSignal) {
+      await OneSignal.init({
+        appId: "b1a01960-23d9-4723-bb52-a37480287c41",
       });
-    </script>
-  </head>
+    });
+  </script>
+</head>
 
-  <body class="home">
-    <div id="container">
-      <header>
-        <h1 id="logo">
-          <a href="../index.html"
-            >Learn. Code. Create a better word. |きくち たいし</a
-          >
-        </h1>
-        <div id="menubar">
-          <nav>
-            <ul>
-              <li><a href="../index.html">HOME</a></li>
-              <li><a href="#article">記事</a></li>
-              <li><a href="#blog">Blog</a></li>
-              <li><a href="#con">contact</a></li>
-            </ul>
-          </nav>
-        </div>
-      </header>
-
-      <aside id="mainimg">
-        <div class="slide slide1">
-          <div>
-            <h1>学びをコードに<br />コードを価値に。</h1>
-          </div>
-        </div>
-        <div class="slide slide2">
-          <div>
-            <h1>学びをコードに<br />コードを価値に</h1>
-          </div>
-        </div>
-        <div class="slide slide3">
-          <div>
-            <h1>学びをコードに<br />コードを価値に</h1>
-          </div>
-        </div>
-      </aside>
-
-      <div id="contents">
-        <main>
-          <section class="bg1" id="article">
-            <h2 class="c"><span>今後のブログについて</span></h2>
-            <p style="font-size: 0.85rem; opacity: 0.8; margin-bottom: 1.5rem">
-              2026/02/27
-            </p>
-            <p class="ward">
-              こんにちは、菊地泰史です。<br /><br />
-              今回は今後のブログ運営について書こうと思います。<br /><br />
-              これまでポートフォリオサイトの制作に集中してきましたが、今後はブログも定期的に更新していく予定です。<br /><br />
-              主に以下の内容を書いていこうと考えています。<br />
-              ・Pythonや機械学習の学習記録<br />
-              ・作成したアプリの開発秘話<br />
-              ・プログラミングで詰まったことと解決方法<br />
-              ・自称中学生エンジニアとして感じたこと<br /><br />
-              まだまだ勉強中ですが、同じように学んでいる人の役に立てるような記事を目指していきます。<br />
-              よろしくお願いします！
-            </p>
-          </section>
-
-          <div data-include="../parts/blog-section.html"></div>
-
-          <!-- iOS only: How to receive notifications -->
-          <section id="ios-notice" class="bg1 ios-only">
-            <h3 class="c">
-              <span class="fade-in-text"
-                >iPhoneでブログ更新の通知を受け取る方法</span
-              >
-            </h3>
-            <div class="ward">
-              <p>
-                iPhone（iOS）は仕様上、Safariで普通に開いただけでは通知を受け取れません。
-                「ホーム画面に追加」したあと、追加したアイコンから開いてください。
-              </p>
-              <ol
-                style="margin: 10px 0 0; padding-left: 22px; line-height: 1.8"
-              >
-                <li>Safariでこのサイトを開く</li>
-                <li>右下の・・・を押す</li>
-                <li>「共有」ボタンを押す</li>
-                <li>下にスクロール</li>
-                <li>「ホーム画面に追加」を選ぶ</li>
-                <li>追加されたアイコンからこのサイトを開く</li>
-                <li>ページ下の「通知を受け取る」を押して許可する</li>
-              </ol>
-              <p style="margin-top: 12px">
-                <a href="#con" class="push-btn">通知を受け取る</a>
-              </p>
-            </div>
-          </section>
-
-          <section id="con">
-            <a href="mailto:taishikikuchi12@gmail.com" class="mail-button"
-              >web制作のお問い合わせや感想はこちら</a
-            >
-          </section>
-
-          <ul id="footermenu">
+<body class="home">
+  <div id="container">
+    <header>
+      <h1 id="logo">
+        <a href="../index.html">Learn. Code. Create a better word. |きくち たいし</a>
+      </h1>
+      <div id="menubar">
+        <nav>
+          <ul>
             <li><a href="../index.html">HOME</a></li>
-            <li><a href="../index.html#about">自己紹介</a></li>
-            <li><a href="../index.html#skills">スキル</a></li>
-            <li><a href="../index.html#works">作品</a></li>
-            <li><a href="#blog">blog</a></li>
+            <li><a href="#article">記事</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#con">contact</a></li>
           </ul>
-
-          <footer>
-            <small
-              >Copyright&copy; <a href="../index.html">Taishi Kikuchi</a> All
-              Rights Reserved.</small
-            >
-            <span class="pr"
-              ><a href="https://template-party.com/" target="_blank"
-                >《Web Design:Template-Party》</a
-              ></span
-            >
-          </footer>
-
-          <div class="pagetop"><a href="#"></a></div>
-        </main>
+        </nav>
       </div>
+    </header>
+
+    <aside id="mainimg">
+      <div class="slide slide1">
+        <div>
+          <h1>学びをコードに<br />コードを価値に。</h1>
+        </div>
+      </div>
+      <div class="slide slide2">
+        <div>
+          <h1>学びをコードに<br />コードを価値に</h1>
+        </div>
+      </div>
+      <div class="slide slide3">
+        <div>
+          <h1>学びをコードに<br />コードを価値に</h1>
+        </div>
+      </div>
+    </aside>
+
+    <div id="contents">
+      <main>
+        <section class="bg1" id="article">
+          <h2 class="c"><span>今後のブログについて</span></h2>
+          <p style="font-size: 0.85rem; opacity: 0.8; margin-bottom: 1.5rem">2026/02/27</p>
+          <p class="ward">
+            こんにちは、菊地泰史です。<br /><br />
+            今回は今後のブログ運営について書こうと思います。<br /><br />
+            これまでポートフォリオサイトの制作に集中してきましたが、今後はブログも定期的に更新していく予定です。<br /><br />
+            主に以下の内容を書いていこうと考えています。<br />
+            ・Pythonや機械学習の学習記録<br />
+            ・作成したアプリの開発秘話<br />
+            ・プログラミングで詰まったことと解決方法<br />
+            ・自称中学生エンジニアとして感じたこと<br /><br />
+            まだまだ勉強中ですが、同じように学んでいる人の役に立てるような記事を目指していきます。<br />
+            よろしくお願いします！
+          </p>
+        </section>
+
+        <div data-include="../parts/blog-section.html"></div>
+
+        <section id="ios-notice" class="bg1 ios-only">
+          <h3 class="c">
+            <span class="fade-in-text">iPhoneでブログ更新の通知を受け取る方法</span>
+          </h3>
+          <div class="ward">
+            <p>
+              iPhone（iOS）は仕様上、Safariで普通に開いただけでは通知を受け取れません。
+              「ホーム画面に追加」したあと、追加したアイコンから開いてください。
+            </p>
+            <ol style="margin: 10px 0 0; padding-left: 22px; line-height: 1.8">
+              <li>Safariでこのサイトを開く</li>
+              <li>右下の・・・を押す</li>
+              <li>「共有」ボタンを押す</li>
+              <li>下にスクロール</li>
+              <li>「ホーム画面に追加」を選ぶ</li>
+              <li>追加されたアイコンからこのサイトを開く</li>
+              <li>ページ下の「通知を受け取る」を押して許可する</li>
+            </ol>
+            <p style="margin-top: 12px">
+              <a href="#con" class="push-btn">通知を受け取る</a>
+            </p>
+          </div>
+        </section>
+
+        <section id="con">
+          <a href="mailto:taishikikuchi12@gmail.com" class="mail-button">web制作のお問い合わせや感想はこちら</a>
+        </section>
+
+        <ul id="footermenu">
+          <li><a href="../index.html">HOME</a></li>
+          <li><a href="../index.html#about">自己紹介</a></li>
+          <li><a href="../index.html#skills">スキル</a></li>
+          <li><a href="../index.html#works">作品</a></li>
+          <li><a href="#blog">blog</a></li>
+        </ul>
+
+        <footer>
+          <small>Copyright&copy; <a href="../index.html">Taishi Kikuchi</a> All Rights Reserved.</small>
+          <span class="pr"><a href="https://template-party.com/" target="_blank">《Web Design:Template-Party》</a></span>
+        </footer>
+
+        <div class="pagetop"><a href="#"></a></div>
+      </main>
     </div>
+  </div>
 
-    <div id="menubar_hdr"><span></span><span></span><span></span></div>
+  <div id="menubar_hdr"><span></span><span></span><span></span></div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/protonet-jquery.inview/1.1.2/jquery.inview.min.js"></script>
-    <script src="../js/jquery.inview_set.js"></script>
-    <script src="../js/main.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/protonet-jquery.inview/1.1.2/jquery.inview.min.js"></script>
+  <script src="../js/jquery.inview_set.js"></script>
+  <script src="../js/main.js"></script>
 
-    <script>
-      $(function () {
-        if ($("#mainimg .slide.active").length > 0) return;
-        var slides = $("#mainimg .slide");
-        if (slides.length === 0) return;
-        var currentIndex = 0;
-        slides.eq(currentIndex).css("opacity", 1).addClass("active");
-        setInterval(function () {
-          var nextIndex = (currentIndex + 1) % slides.length;
-          slides.eq(currentIndex).css("opacity", 0).removeClass("active");
-          slides.eq(nextIndex).css("opacity", 1).addClass("active");
-          currentIndex = nextIndex;
-        }, 4000);
-      });
-    </script>
-  </body>
+  <script>
+    $(function () {
+      if ($("#mainimg .slide.active").length > 0) return;
+      var slides = $("#mainimg .slide");
+      if (slides.length === 0) return;
+      var currentIndex = 0;
+      slides.eq(currentIndex).css("opacity", 1).addClass("active");
+      setInterval(function () {
+        var nextIndex = (currentIndex + 1) % slides.length;
+        slides.eq(currentIndex).css("opacity", 0).removeClass("active");
+        slides.eq(nextIndex).css("opacity", 1).addClass("active");
+        currentIndex = nextIndex;
+      }, 4000);
+    });
+  </script>
+</body>
+
 </html>

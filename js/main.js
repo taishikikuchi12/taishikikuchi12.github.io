@@ -69,7 +69,7 @@ function initBlogPagination() {
         for (var i = start; i < end; i++) $list.append(items[i]);
 
         $pager.empty();
-        addBtn('‹', Math.max(pageIndex - 1, 0), { disabled: pageIndex === 0 });
+        addBtn('‹戻る', Math.max(pageIndex - 1, 0), { disabled: pageIndex === 0 });
 
         var maxNumbers = 10;
         var startNum = Math.max(0, pageIndex - Math.floor(maxNumbers / 2));
