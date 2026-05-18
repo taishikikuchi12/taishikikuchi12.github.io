@@ -150,8 +150,8 @@ body.blog-page main p {
 
 body.blog-page main img {
   display: block;
-  width: min(80%, 420px);
-  max-height: 280px;
+  width: min(90%, 420px);
+  max-height: 400px;
   object-fit: contain;
   margin: 1.5rem auto 2rem;
   border-radius: 8px;
