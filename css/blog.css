@@ -148,6 +148,15 @@ body.blog-page main p {
   margin: 0 0 1.45rem;
 }
 
+body.blog-page main img {
+  display: block;
+  width: min(80%, 420px);
+  max-height: 280px;
+  object-fit: contain;
+  margin: 1.5rem auto 2rem;
+  border-radius: 8px;
+}
+
 body.blog-page .ward {
   text-shadow: none;
 }
