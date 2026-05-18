@@ -8,6 +8,7 @@
     今後のブログについて | Learn. Code. Create a better word. |きくち たいし
   </title>
   <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/blog.css" />
   <link rel="icon" href="../favicon.ico" sizes="any" type="image/x-icon" />
   <link rel="apple-touch-icon" sizes="180x180" href="favicon.ico" />
   <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico" />
@@ -48,7 +49,7 @@
   </script>
 </head>
 
-<body class="home">
+<body class="home blog-page">
   <div id="container">
     <header>
       <h1 id="logo">
@@ -88,7 +89,7 @@
       <main>
         <section class="bg1" id="article">
           <h2 class="c"><span>今後のブログについて</span></h2>
-          <p style="font-size: 0.85rem; opacity: 0.8; margin-bottom: 1.5rem">2026/02/27</p>
+          <p class="post-date">2026/02/27</p>
           <p class="ward">
             こんにちは、菊地泰史です。<br /><br />
             今回は今後のブログ運営について書こうと思います。<br /><br />
@@ -155,24 +156,7 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/protonet-jquery.inview/1.1.2/jquery.inview.min.js"></script>
-  <script src="../js/jquery.inview_set.js"></script>
   <script src="../js/main.js"></script>
-
-  <script>
-    $(function () {
-      if ($("#mainimg .slide.active").length > 0) return;
-      var slides = $("#mainimg .slide");
-      if (slides.length === 0) return;
-      var currentIndex = 0;
-      slides.eq(currentIndex).css("opacity", 1).addClass("active");
-      setInterval(function () {
-        var nextIndex = (currentIndex + 1) % slides.length;
-        slides.eq(currentIndex).css("opacity", 0).removeClass("active");
-        slides.eq(nextIndex).css("opacity", 1).addClass("active");
-        currentIndex = nextIndex;
-      }, 4000);
-    });
-  </script>
 </body>
 
 </html>

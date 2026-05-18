@@ -25,6 +25,7 @@ async function includeHTML() {
     } catch (e) {}
 
     if (typeof initBlogPagination === 'function') initBlogPagination();
+    if (typeof initScrollAnimationClasses === 'function') initScrollAnimationClasses();
     if (typeof initFadeInTextInview === 'function') initFadeInTextInview();
     if (typeof initSectionInview === 'function') initSectionInview();
 }
@@ -172,9 +173,29 @@ $(function () {
 });
 
 // テキストフェードイン（inview）
+function initScrollAnimationClasses() {
+    if (typeof $ === 'undefined') return;
+    var animations = [
+        ['.up', 'upstyle'],
+        ['.down', 'downstyle'],
+        ['.transform1', 'transform1style'],
+        ['.transform2', 'transform2style'],
+        ['.transform3', 'transform3style'],
+        ['.blur', 'blurstyle']
+    ];
+
+    animations.forEach(function (item) {
+        $(item[0]).off('inview.scrollAnimation').on('inview.scrollAnimation', function () {
+            $(this).addClass(item[1]);
+        });
+    });
+}
+$(function () { initScrollAnimationClasses(); });
+
+// テキストフェードイン（inview）
 function initFadeInTextInview() {
     if (typeof $ === 'undefined') return;
-    $('.fade-in-text').off('inview').on('inview', function (event, isInView) {
+    $('.fade-in-text').off('inview.fadeInText').on('inview.fadeInText', function (event, isInView) {
         if (isInView && !$(this).data('animated')) {
             var text = $(this).text();
             var innerHTML = '';
@@ -191,7 +212,7 @@ $(function () { initFadeInTextInview(); });
 // sectionフェードイン（inview）
 function initSectionInview() {
     if (typeof $ === 'undefined') return;
-    $('main > section').off('inview').on('inview', function (event, isInView) {
+    $('main > section').off('inview.sectionAnimation').on('inview.sectionAnimation', function (event, isInView) {
         if (isInView && !$(this).data('sectionAnimated')) {
             $(this).addClass('section-in').data('sectionAnimated', true);
         }
@@ -202,6 +223,7 @@ $(function () { initSectionInview(); });
 // スライドショー
 $(function () {
     var slides = $('#mainimg .slide');
+    if (slides.length === 0) return;
     var currentIndex = 0;
     slides.eq(currentIndex).css('opacity', 1).addClass('active');
     setInterval(function () {

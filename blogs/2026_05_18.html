@@ -15,6 +15,7 @@
     </script>
 
     <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/blog.css" />
     <link rel="icon" href="../favicon.ico" sizes="any" type="image/x-icon" />
     <link rel="apple-touch-icon" sizes="180x180" href="favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico" />
@@ -55,7 +56,7 @@
     </script>
 </head>
 
-<body class="home">
+<body class="home blog-page">
     <div id="container">
         <header>
             <h1 id="logo">
@@ -95,7 +96,7 @@
             <main>
                 <section class="bg1" id="moczi">
                     <h2 id="article-title" style="font-size: 2.5rem"></h2>
-                    <p style="font-size: 0.85rem; opacity: 0.8; margin-bottom: 1.5rem">2026/03/16</p>
+                    <p class="post-date">2026/05/18</p>
                     <div class="toc-005">
                         <div>
                             目次
@@ -126,7 +127,7 @@
                         曲がり道が少なかったり、サイクリングロードを<br>
                         使う道を表示してくれて、とても運転しやすく安全だと感じています。
                     </p>
-                    <h3><br>Googleマップが最適な理由その二<br>無料</h3>
+                    <h3>Googleマップが最適な理由その二<br>無料</h3>
                     <p>
                         私は以前自転車ナビタイムを一ヶ月無料体験したことがあります。<br>
                         このアプリは自転車用途ではGoogleマップに勝る部分が多々あります。<br>
@@ -134,8 +135,7 @@
                         しかし大部分の機能が有料ということが大きな壁でした。<br>
                         経路を重視し、お金を払える人はこちらのアプリの方が良いかもしれません。
                     </p>
-                    <h3><br>
-                        Googleマップが最適な理由その三<br>その他の機能が充実している</h3>
+                    <h3>Googleマップが最適な理由その三<br>その他の機能が充実している</h3>
                     <p>
                         この機能はAppleマップと被りますが、<br>
                         ストリートviewがとても使いやすいです。<br>
@@ -146,10 +146,10 @@
                 </section>
 
                 <section id="3">
-                    <h2><br>Googleマップにもある<br>デメリット</h2>
+                    <h2>Googleマップにもある<br>デメリット</h2>
                     <h3>iPhoneの人はAppleマップより重いかも</h3>
                     <p> 私のスマホはiPhoneなのですが時々電波が悪いところだとGoogleマップは表示されないことがあります。<br>
-                        なので電波が悪いところに行く人はマップをダンロードするといいかもしれません。
+                        なので電波が悪いところに行く人はマップをダウンロードするといいかもしれません。
                     </p>
                 </section>
 
@@ -216,24 +216,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/protonet-jquery.inview/1.1.2/jquery.inview.min.js"></script>
-    <script src="../js/jquery.inview_set.js"></script>
     <script src="../js/main.js"></script>
-
-    <script>
-        $(function () {
-            if ($("#mainimg .slide.active").length > 0) return;
-            var slides = $("#mainimg .slide");
-            if (slides.length === 0) return;
-            var currentIndex = 0;
-            slides.eq(currentIndex).css("opacity", 1).addClass("active");
-            setInterval(function () {
-                var nextIndex = (currentIndex + 1) % slides.length;
-                slides.eq(currentIndex).css("opacity", 0).removeClass("active");
-                slides.eq(nextIndex).css("opacity", 1).addClass("active");
-                currentIndex = nextIndex;
-            }, 4000);
-        });
-    </script>
 
     <script>
         document.getElementById("article-title").textContent = ARTICLE_TITLE;
