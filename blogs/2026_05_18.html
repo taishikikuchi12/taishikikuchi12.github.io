@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title></title>
+
+    <script>
+        const ARTICLE_TITLE = "サイクリングではGoogleマップが最適な話";
+        const SITE_TITLE = "Learn. Code. Create a better word. |きくち たいし";
+
+        document.title = ARTICLE_TITLE + " | " + SITE_TITLE;
+    </script>
+
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="icon" href="../favicon.ico" sizes="any" type="image/x-icon" />
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Learn. Code. Create a better word. |きくち たいし" />
+    <meta name="theme-color" content="#ffffff" />
+    <style>
+        main>section {
+            opacity: 1 !important;
+            transform: none !important;
+            transition: none !important;
+        }
+
+        .ios-only {
+            display: none;
+        }
+
+        html.ios .ios-only {
+            display: block;
+        }
+    </style>
+    <script>
+        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+        if (isIOS) document.documentElement.classList.add('ios');
+    </script>
+    <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js"></script>
+    <script>
+        window.OneSignalDeferred = window.OneSignalDeferred || [];
+        OneSignalDeferred.push(async function (OneSignal) {
+            await OneSignal.init({
+                appId: "b1a01960-23d9-4723-bb52-a37480287c41",
+            });
+        });
+    </script>
+</head>
+
+<body class="home">
+    <div id="container">
+        <header>
+            <h1 id="logo">
+                <a href="../index.html">Learn. Code. Create a better word. |きくち たいし</a>
+            </h1>
+            <div id="menubar">
+                <nav>
+                    <ul>
+                        <li><a href="../index.html">HOME</a></li>
+                        <li><a href="#1">記事</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#con">contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <aside id="mainimg">
+            <div class="slide slide1">
+                <div>
+                    <h1>学びをコードに<br />コードを価値に。</h1>
+                </div>
+            </div>
+            <div class="slide slide2">
+                <div>
+                    <h1>学びをコードに<br />コードを価値に</h1>
+                </div>
+            </div>
+            <div class="slide slide3">
+                <div>
+                    <h1>学びをコードに<br />コードを価値に</h1>
+                </div>
+            </div>
+        </aside>
+
+        <div id="contents">
+            <main>
+                <section class="bg1" id="moczi">
+                    <h2 id="article-title" style="font-size: 2.5rem"></h2>
+                    <p style="font-size: 0.85rem; opacity: 0.8; margin-bottom: 1.5rem">2026/03/16</p>
+                    <div class="toc-005">
+                        <div>
+                            目次
+                        </div>
+                        <ol>
+                            <li><a href="#1">前置き</a></li>
+                            <li><a href="#2">Googleマップが最適な理由</a></li>
+                            <li><a href="#3">Googleマップにもあるデメリット</a></li>
+                            <li><a href="#4">終わり</a></li>
+                        </ol>
+                    </div>
+                </section>
+
+                <section id="1">
+                    <h2>前置き</h2>
+                    <p>私は最近自転車にハマっており、その時に良くスマホのマップを見ます。<br>
+                        そんな中で私はたくさんのマップアプリを比較しGoogleマップが最適だと思ったのでその理由を紹介します。
+                    </p>
+                </section>
+
+                <section class="bg1" id="2">
+                    <h2>Googleマップが最適な理由</h2>
+                    <h3>Googleマップが最適な理由その一<br>ナビ能力がすごい</h3>
+                    <p>
+                        私が以前使っていたAppleマップでは舗装されてない裏道などを指定されたり、<br>
+                        曲がり角が多く表示されてしまい運転がしづらいと思うことが多々ありました。<br>
+                        それに対してGoogleマップでは経路を検索する時に<br>
+                        曲がり道が少なかったり、サイクリングロードを<br>
+                        使う道を表示してくれて、とても運転しやすく安全だと感じています。
+                    </p>
+                    <h3><br>Googleマップが最適な理由その二<br>無料</h3>
+                    <p>
+                        私は以前自転車ナビタイムを一ヶ月無料体験したことがあります。<br>
+                        このアプリは自転車用途ではGoogleマップに勝る部分が多々あります。<br>
+                        例えば速度を計測してくれたり、さまざまな用途のための経路も表示できます。<br>
+                        しかし大部分の機能が有料ということが大きな壁でした。<br>
+                        経路を重視し、お金を払える人はこちらのアプリの方が良いかもしれません。
+                    </p>
+                    <h3><br>
+                        Googleマップが最適な理由その三<br>その他の機能が充実している</h3>
+                    <p>
+                        この機能はAppleマップと被りますが、<br>
+                        ストリートviewがとても使いやすいです。<br>
+                        出先で自転車の駐輪場などを探す時にとても重宝する機能です。<br>
+                        また、見ることができればストリートビューから駐輪場の料金も見れます。<br>
+                        そのほかにも目的地のレビューや営業時間も表示されておりこの機能も重宝しています。
+                    </p>
+                </section>
+
+                <section id="3">
+                    <h2><br>Googleマップにもある<br>デメリット</h2>
+                    <h3>iPhoneの人はAppleマップより重いかも</h3>
+                    <p> 私のスマホはiPhoneなのですが時々電波が悪いところだとGoogleマップは表示されないことがあります。<br>
+                        なので電波が悪いところに行く人はマップをダンロードするといいかもしれません。
+                    </p>
+                </section>
+
+                <section class="bg1" id="4">
+                    <h2>終わり</h2>
+                    <p>以上が私がサイクリングではGoogleマップが最適だと思う理由です。<br>
+                        皆さんも自分のお気に入りのマップアプリを見つけてみてください。<br>
+                        私の意見も参考にしていただけたら光栄です。</p>
+                </section>
+
+
+
+
+                <div data-include="../parts/blog-section.html"></div>
+
+                <section id="ios-notice" class="bg1 ios-only">
+                    <h3 class="c">
+                        <span class="fade-in-text">iPhoneでブログ更新の通知を受け取る方法</span>
+                    </h3>
+                    <div class="ward">
+                        <p>
+                            iPhone（iOS）は仕様上、Safariで普通に開いただけでは通知を受け取れません。
+                            「ホーム画面に追加」したあと、追加したアイコンから開いてください。
+                        </p>
+                        <ol style="margin: 10px 0 0; padding-left: 22px; line-height: 1.8">
+                            <li>Safariでこのサイトを開く</li>
+                            <li>右下の・・・を押す</li>
+                            <li>「共有」ボタンを押す</li>
+                            <li>下にスクロール</li>
+                            <li>「ホーム画面に追加」を選ぶ</li>
+                            <li>追加されたアイコンからこのサイトを開く</li>
+                            <li>ページ下の「通知を受け取る」を押して許可する</li>
+                        </ol>
+                        <p style="margin-top: 12px">
+                            <a href="#con" class="push-btn">通知を受け取る</a>
+                        </p>
+                    </div>
+                </section>
+
+                <section id="con">
+                    <a href="mailto:taishikikuchi12@gmail.com" class="mail-button">web制作のお問い合わせや感想はこちら</a>
+                </section>
+
+                <ul id="footermenu">
+                    <li><a href="../index.html">HOME</a></li>
+                    <li><a href="../index.html#about">自己紹介</a></li>
+                    <li><a href="../index.html#skills">スキル</a></li>
+                    <li><a href="../index.html#works">作品</a></li>
+                    <li><a href="#blog">blog</a></li>
+                </ul>
+
+                <footer>
+                    <small></small>
+                    <span class="pr"><a href="https://template-party.com/" target="_blank">《Web
+                            Design:Template-Party》</a></span>
+                </footer>
+
+                <div class="pagetop"><a href="#"></a></div>
+            </main>
+        </div>
+    </div>
+
+    <div id="menubar_hdr"><span></span><span></span><span></span></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/protonet-jquery.inview/1.1.2/jquery.inview.min.js"></script>
+    <script src="../js/jquery.inview_set.js"></script>
+    <script src="../js/main.js"></script>
+
+    <script>
+        $(function () {
+            if ($("#mainimg .slide.active").length > 0) return;
+            var slides = $("#mainimg .slide");
+            if (slides.length === 0) return;
+            var currentIndex = 0;
+            slides.eq(currentIndex).css("opacity", 1).addClass("active");
+            setInterval(function () {
+                var nextIndex = (currentIndex + 1) % slides.length;
+                slides.eq(currentIndex).css("opacity", 0).removeClass("active");
+                slides.eq(nextIndex).css("opacity", 1).addClass("active");
+                currentIndex = nextIndex;
+            }, 4000);
+        });
+    </script>
+
+    <script>
+        document.getElementById("article-title").textContent = ARTICLE_TITLE;
+    </script>
+</body>
+
+</html>

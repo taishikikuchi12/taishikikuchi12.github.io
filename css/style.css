@@ -679,8 +679,20 @@ main h2 .hosoku {
 }
 
 main h3 {
-  display: inline-block;
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-wrap: anywhere;
   border-bottom: 3px solid var(--text-color);
+}
+
+@media screen and (min-width: 900px) {
+  main>section.bg1>h3,
+  main>div[data-include]>section.bg1>h3 {
+    margin-left: calc((100% - min(800px, 100%)) / 2);
+    margin-right: auto;
+  }
 }
 
 #footermenu {
