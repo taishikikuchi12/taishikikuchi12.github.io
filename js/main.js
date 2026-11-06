@@ -1,3 +1,18 @@
+// iPhoneのブラウザだけに通知の受け取り方を表示する。
+// iOS独自のstandaloneと標準のdisplay-modeの両方でアプリ起動を判定する。
+(function () {
+    var appMode = window.matchMedia('(display-mode: standalone)');
+    function updateIPhoneNotice() {
+        var isIPhone = /iPhone/.test(navigator.userAgent);
+        var isApp = navigator.standalone === true || appMode.matches;
+        document.documentElement.classList.toggle('iphone-browser', isIPhone && !isApp);
+    }
+    updateIPhoneNotice();
+    if (appMode.addEventListener) appMode.addEventListener('change', updateIPhoneNotice);
+    else appMode.addListener(updateIPhoneNotice);
+    window.addEventListener('pageshow', updateIPhoneNotice);
+})();
+
 // HTML include
 async function includeHTML() {
     const targets = document.querySelectorAll('[data-include]');

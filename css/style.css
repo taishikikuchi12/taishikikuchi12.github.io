@@ -1101,32 +1101,31 @@ main>section.section-in {
   margin-bottom: 1.5rem;
 }
 
-/* iOS専用セクション（ios-only）
-   html.ios クラスが付いたときのみ表示 */
-.ios-only {
+/* iPhoneのブラウザ向け通知案内。配色と区切りは既存の.bg1に合わせる。 */
+#ios-notice {
   display: none;
 }
 
-html.ios .ios-only {
+html.iphone-browser #ios-notice {
   display: block;
 }
 
-/* iOS通知案内ボタン */
-.push-btn {
-  background: #f6c63a;
-  color: #222;
-  border: none;
-  border-radius: 5px;
-  padding: 8px 18px;
-  font-size: 1rem;
-  font-weight: bold;
-  text-decoration: none;
-  display: inline-block;
-  margin-top: 10px;
-  transition: background 0.2s;
+#ios-notice .ios-notice-steps {
+  padding-left: 1.5rem;
+  margin: 1.5rem 0;
 }
 
-.push-btn:hover {
-  background: #ffe28a;
-  color: #222;
+#ios-notice .ios-notice-steps li {
+  margin-bottom: 1rem;
+}
+
+#ios-notice .ios-notice-note,
+#ios-notice .ios-notice-help {
+  font-size: 0.85rem;
+}
+
+@media (display-mode: standalone) {
+  html.iphone-browser #ios-notice {
+    display: none;
+  }
 }

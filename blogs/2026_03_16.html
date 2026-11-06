@@ -25,19 +25,7 @@
             transform: none !important;
             transition: none !important;
         }
-
-        .ios-only {
-            display: none;
-        }
-
-        html.ios .ios-only {
-            display: block;
-        }
     </style>
-    <script>
-        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-        if (isIOS) document.documentElement.classList.add('ios');
-    </script>
     <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js"></script>
     <script>
         window.OneSignalDeferred = window.OneSignalDeferred || [];
@@ -171,30 +159,6 @@
 
 
                 <div data-include="../parts/blog-section.html"></div>
-
-                <section id="ios-notice" class="bg1 ios-only">
-                    <h3 class="c">
-                        <span class="fade-in-text">iPhoneでブログ更新の通知を受け取る方法</span>
-                    </h3>
-                    <div class="ward">
-                        <p>
-                            iPhone（iOS）は仕様上、Safariで普通に開いただけでは通知を受け取れません。
-                            「ホーム画面に追加」したあと、追加したアイコンから開いてください。
-                        </p>
-                        <ol style="margin: 10px 0 0; padding-left: 22px; line-height: 1.8">
-                            <li>Safariでこのサイトを開く</li>
-                            <li>右下の・・・を押す</li>
-                            <li>「共有」ボタンを押す</li>
-                            <li>下にスクロール</li>
-                            <li>「ホーム画面に追加」を選ぶ</li>
-                            <li>追加されたアイコンからこのサイトを開く</li>
-                            <li>ページ下の「通知を受け取る」を押して許可する</li>
-                        </ol>
-                        <p style="margin-top: 12px">
-                            <a href="#con" class="push-btn">通知を受け取る</a>
-                        </p>
-                    </div>
-                </section>
 
                 <section id="con">
                     <a href="mailto:taishikikuchi12@gmail.com" class="mail-button">web制作のお問い合わせや感想はこちら</a>
